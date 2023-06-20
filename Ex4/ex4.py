@@ -9,7 +9,7 @@
 number_of_cranes = 24
 
 if number_of_cranes % 6 == 0:
-    print (f"{number_of_cranes} -> {number_of_cranes // 6} {number_of_cranes // 6 * 4} {number_of_cranes // 6}")
+    print(f"{number_of_cranes} -> {number_of_cranes // 6} {number_of_cranes // 6 * 4} {number_of_cranes // 6}")
 else:
     print("По условию задачи, такое колличество журавликов не смогут сделать дети")
 
