@@ -8,15 +8,20 @@
 import random
 n = int(input('Введите колличество кустов: '))
 
-garden = [random.randint(1, 5) for i in range(n)]
+garden = [random.randint(1, 6) for i in range(n)]
 print(*garden)
 
 max_bushes  = garden[0] + garden[1] + garden[2]
 indicator = ["|"] * 3
+indicator_iteration = 1
 for i in range (2, len(garden) - 1):
     following_bushes = garden[i - 1] + garden[i] + garden[i + 1]
     if following_bushes > max_bushes:
-        indicator.insert(0, " ")
         max_bushes = following_bushes
+        for j in range(indicator_iteration):
+            indicator.insert(0, " ") 
+        indicator_iteration = 1
+    else:
+        indicator_iteration += 1
 print(*indicator)
 print(f"Максимальное число ягод за один заход = {max_bushes}")
