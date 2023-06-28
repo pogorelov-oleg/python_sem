@@ -13,15 +13,15 @@ print(*garden)
 
 max_bushes  = garden[0] + garden[1] + garden[2]
 indicator = ["|"] * 3
-indicator_iteration = 1
+indicator_iteration_counts = 1
 for i in range (2, len(garden) - 1):
     following_bushes = garden[i - 1] + garden[i] + garden[i + 1]
     if following_bushes > max_bushes:
         max_bushes = following_bushes
-        for j in range(indicator_iteration):
+        for j in range(indicator_iteration_counts):
             indicator.insert(0, " ") 
-        indicator_iteration = 1
+        indicator_iteration_counts = 1
     else:
-        indicator_iteration += 1
+        indicator_iteration_counts += 1
 print(*indicator)
 print(f"Максимальное число ягод за один заход = {max_bushes}")
