@@ -12,16 +12,17 @@ garden = [random.randint(1, 6) for i in range(n)]
 print(*garden)
 
 max_bushes  = garden[0] + garden[1] + garden[2]
-indicator = ["|"] * 3
-indicator_iteration_counts = 1
-for i in range (2, len(garden) - 1):
-    following_bushes = garden[i - 1] + garden[i] + garden[i + 1]
+indicator = ["|"] * 3 + [" "] * (len(garden) - 3)
+for i in range (len(garden)):
+    following_bushes = garden[1] + garden[2] + garden[3]
     if following_bushes > max_bushes:
         max_bushes = following_bushes
-        for j in range(indicator_iteration_counts):
-            indicator.insert(0, " ") 
-        indicator_iteration_counts = 1
+        indicator = ["|"] * 3 + [" "] * (len(garden) - 3)
     else:
-        indicator_iteration_counts += 1
+        temp = indicator.pop(0)
+        indicator.append(temp)    
+    temp = garden.pop(0)
+    garden.append(temp)
+
 print(*indicator)
 print(f"Максимальное число ягод за один заход = {max_bushes}")
