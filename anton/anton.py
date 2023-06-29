@@ -8,7 +8,6 @@ def Check_Virus(string, virus):
                 string = string[string.index(i):]
     return("Virus")    
           
-
 for i in string: 
     print(f'{i} - {Check_Virus(string[i], "anton")}')
 
