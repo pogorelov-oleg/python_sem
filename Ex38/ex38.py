@@ -20,7 +20,6 @@ def print_top(phone_book):
             print(f'\n{"-" * 80}')
             flag = False
 
-
 def print_result(phone_book):
     print_top(phone_book)
     for i in phone_book:
@@ -66,7 +65,6 @@ def get_new_user():
     new_user += input("Введите имя: ") + ","
     new_user += input("Введите номер телефона: ") + ","
     new_user += input("Введите примечание: ") + "\n"
-    
     return new_user
 
 def add_user(filename ,user_data):
@@ -85,10 +83,6 @@ def delete_by_name(phone_book, name):
                         phone_book.remove(i)
                         write_csv('base_ex38.txt', phone_book)
                     break 
-    
-    
-    
-    
             
 def edit_by_name(phone_book, name):
     for i in phone_book:
