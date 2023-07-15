@@ -74,14 +74,22 @@ def add_user(filename ,user_data):
         fout.write(user_data)
 
 def delete_by_name(phone_book, name):
-     for i in phone_book:
-        for key, value in i.items():
-            if key == 'Фамилия':
-                if value.lower() == name.lower():
-                    phone_book.remove(i)
-                    write_csv('base_ex38.txt', phone_book)
-                break 
-
+    find_by_name(phone_book, name)
+    print(f'\nВы действительно хотите удалить этого абонента? Да/Нет: ', end = "")
+    user_input = input()
+    if user_input.lower() == 'да':
+        for i in phone_book:
+            for key, value in i.items():
+                if key == 'Фамилия':
+                    if value.lower() == name.lower():
+                        phone_book.remove(i)
+                        write_csv('base_ex38.txt', phone_book)
+                    break 
+    
+    
+    
+    
+            
 def edit_by_name(phone_book, name):
     for i in phone_book:
         for key, value in i.items():
